@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dinner Menu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #fdfbfb, #ebedee);
+        }
+
+        .menu {
+            width: 400px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .menu h1 {
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            background: #f5f7fa;
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #444;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .menu li:nth-child(odd) {
+            background-color: #e6ecf0;
+        }
+
+        .menu li:hover {
+            background-color: #d0e6f7;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <h1>Dinner Menu</h1>
+    <ul>
+        <li th:each="item : ${menuItems}" th:text="${item}"></li>
+    </ul>
+</div>
+</body>
+</html>
+
