@@ -21,21 +21,21 @@ There are several ways to run the application. You can run it from the command l
 Once the app starts, go to the web browser and visit http://localhost:8080/menu
 
 
-### Using the Maven Plugin:
+### 1. Using the Maven Plugin:
 
 Go to the root folder of the application and type:
 ```
 $ ./mvnw spring-boot:run
 ```
 
-### Using Executable Jar:
+### 2. Using Executable Jar:
 
 Then you can run the JAR file:
 ```
 $java -jar target/dinner-menu-0.0.1-SNAPSHOT.jar
 ```
 
-### Docker
+### 3. Docker
 
 It is possible to run Dinner Menu using Docker:
 
