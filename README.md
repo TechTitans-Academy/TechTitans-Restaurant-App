@@ -25,7 +25,8 @@ Once the app starts, go to the web browser and visit http://localhost:8080/menu
 
 Go to the root folder of the application and type:
 ```
-$ ./mvnw spring-boot:run
+./mvnw spring-boot:run
+./mvnw clean package -DskipTests #Create a jar file!
 ```
 
 ### 2. Using Executable Jar:
