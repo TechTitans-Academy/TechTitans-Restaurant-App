@@ -25,8 +25,9 @@ Once the app starts, go to the web browser and visit http://localhost:8080/menu
 
 Go to the root folder of the application and type:
 ```
+./mvnw compile #Compling the code.
 ./mvnw spring-boot:run
-./mvnw clean package -DskipTests #Create a jar file!
+./mvnw clean package -DskipTests #Packing the code into jar file.
 ```
 
 ### 2. Using Executable Jar:
