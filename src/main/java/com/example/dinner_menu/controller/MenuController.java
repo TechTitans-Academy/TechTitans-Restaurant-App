@@ -13,13 +13,13 @@ public class MenuController {
     @GetMapping("/menu")
     public String getMenu(Model model) {
         List<String> menuItems = Arrays.asList(
-                "Grilled Chicken",
-                "Caesar Salad",
-                "Steak",
-                "Mashed Potatoes",
-                "Pasta Alfredo",
-                "Garlic Bread",
-                "Tiramisu"
+                "Grilled Chicken!",
+                "Caesar Salad!",
+                "Steak!",
+                "Mashed Potatoes!",
+                "Pasta Alfredo!",
+                "Garlic Bread!",
+                "Tiramisu!"
         );
         model.addAttribute("menuItems", menuItems);
         return "menu"; // This maps to templates/menu.html
