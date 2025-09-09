@@ -1,31 +1,36 @@
 pipeline {
     agent any
-
     stages {
-        stage('Clone the Repo') {
+        stage('Cloning the Repo') {
             steps {
-                git url: "https://github.com/TechTitans-Academy/TechTitans-Restaurant-App.git", branch: "main"
+            git branch: 'main', url: 'https://github.com/TechTitans-Academy/TechTitans-Restaurant-App.git'
             }
         }
-        stage('Compile Code!'){
+        stage('Compiling the Code'){
             steps {
                 sh "./mvnw compile"
             }
         }
-        stage('Package Application'){
+        stage('Packaging Application'){
             steps {
                 sh "./mvnw clean package -DskipTests"
             }
         }
-        stage('Build Dockerfile'){
+        stage('Docker Image Build'){
             steps {
-                sh "/usr/local/bin/docker build . -t dinnerapp"
+                sh "/usr/local/bin/docker build -t dinner-app ."
             }
         }
-        stage('Run Application'){
-            steps{
-                sh "/usr/local/bin/docker run -p 8083:8080 -d dinnerapp"
+        stage('Starting Application'){
+            steps {
+                sh "/usr/local/bin/docker run -p 8083:8080 -d dinner-app"
+                echo "Application is running on http://localhost:8083/menu on your browser!"
             }
+        }
+    }
+        post { 
+        always { 
+            cleanWs()
         }
     }
 }
